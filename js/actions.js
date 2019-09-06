@@ -25,8 +25,12 @@ function allActions(){
   
   let dC_h_original = dC_h
 
-  if(String(dC_h).includes(" Find resources and learn")) {
-  	dC_h = dC_h.replace(" Find resources", "<br>Find resources")
+  if(String(dC_h).includes(" Dispose")) {
+  	dC_h = dC_h.replace(" Dispose", "<br>Dispose")
+  } else if(String(dC_h).includes(" Learn")) {
+    dC_h = dC_h.replace(" Learn", "<br>Learn")
+  } else if(String(dC_h).includes(" Keep")) {
+    dC_h = dC_h.replace(" Keep", "<br>Keep")
   }
 
   // Getting and cleaning Search Name Paramter
@@ -58,7 +62,7 @@ function allActions(){
     if(String(dC_h) == 'icon'){    
       const img = document.createElement("img")
       img.src = "img/bottle_icon_sm.png"
-      elem.appendChild(img).width = "100"
+      elem.appendChild(img).width = "150"
     } else {
       elem.innerHTML = dC_h
     }
@@ -103,15 +107,14 @@ function allActions(){
   })
 
 
-  // Redirect after 10 seconds, regardless of activity
-  // setTimeout(redirectQualtrics, 10000)
+  // Redirect after 15 seconds, regardless of activity
+  setTimeout(redirectQualtrics, 15000)
 
 
   // Combine data and redirect
   function redirectQualtrics() {
-    // const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_eeumk4pgZ3aARHT?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
-    // window.location = urlRedirect
-    alert(`wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`)
+    const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_eeumk4pgZ3aARHT?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
+    window.location = urlRedirect
   }
 
 }
