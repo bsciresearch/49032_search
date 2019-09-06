@@ -109,14 +109,9 @@ function allActions(){
 
   // Combine data and redirect
   function redirectQualtrics() {
-<<<<<<< HEAD
     // const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_eeumk4pgZ3aARHT?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
     // window.location = urlRedirect
     alert(`wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`)
-=======
-    const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_3KQICCdoEHKYe8d?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
-    window.location = urlRedirect
->>>>>>> baa72bba3b1a85765b05b580e8abcc0cd1a80aef
   }
 
 }
