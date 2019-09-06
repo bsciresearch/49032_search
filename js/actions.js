@@ -14,7 +14,7 @@ function allActions(){
   }
 
 
-  // Give the parameter a variable name
+  // Getting and cleaning HPP paramet
   let dC_h = getParameterByName('hpp');
   
   if(!dC_h) {
@@ -29,18 +29,40 @@ function allActions(){
   	dC_h = dC_h.replace(" Find resources", "<br>Find resources")
   }
 
-  if(String(dC_h).includes(" Learn more about")) {
-  	dC_h = dC_h.replace(" Learn more", "<br>Learn more")
+  // Getting and cleaning Search Name Paramter
+  let sn1 = getParameterByName('sn1')
+  let sn2 = getParameterByName('sn2')
+  
+  if(!sn1 || !sn2) {
+    sn1 = "Net"
+    sn2 = "search"
+  } else {
+    sn1 = decodeURIComponent(sn1)
+    sn2 = decodeURIComponent(sn2)
   }
-
-  let elem = document.querySelector('#dynamic-content');
-
 
   // Set HTML content
-  if (dC_h.length > 0) {
-    elem.innerHTML = dC_h
-  }
 
+  // Set search title content
+  let elemTitle1 = document.querySelector('#dynamic-title-1')
+  elemTitle1.innerHTML = sn1
+
+  let elemTitle2 = document.querySelector('#dynamic-title-2')
+  elemTitle2.innerHTML = sn2
+
+
+  // Set HPP content
+  let elem = document.querySelector('#dynamic-content');
+
+  if (dC_h.length > 0) {
+    if(String(dC_h) == 'icon'){    
+      const img = document.createElement("img")
+      img.src = "img/bottle_icon_sm.png"
+      elem.appendChild(img).width = "100"
+    } else {
+      elem.innerHTML = dC_h
+    }
+  }
 
   // Get HTML content
   let dispC_h = elem.innerHTML
@@ -82,13 +104,14 @@ function allActions(){
 
 
   // Redirect after 10 seconds, regardless of activity
-  setTimeout(redirectQualtrics, 10000)
+  // setTimeout(redirectQualtrics, 10000)
 
 
   // Combine data and redirect
   function redirectQualtrics() {
-    const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_eeumk4pgZ3aARHT?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
-    window.location = urlRedirect
+    // const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_eeumk4pgZ3aARHT?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
+    // window.location = urlRedirect
+    alert(`wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`)
   }
 
 }
