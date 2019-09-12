@@ -109,9 +109,7 @@ function allActions(){
 
   // Combine data and redirect
   function redirectQualtrics() {
-    // const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_0iXySKlbnGIM3mR?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
     const urlRedirect= `https://surveyresearch877642313.qualtrics.com/jfe/form/SV_0iXySKlbnGIM3mR?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
-    
     window.location = urlRedirect
   }
 
