@@ -31,6 +31,8 @@ function allActions(){
     dC_h = dC_h.replace(" Learn", "<br>Learn")
   } else if(String(dC_h).includes(" Keep")) {
     dC_h = dC_h.replace(" Keep", "<br>Keep")
+  } else if(String(dC_h).includes(" Find")) {
+    dC_h = dC_h.replace(" Find", "<br>Find")
   }
 
   // Getting and cleaning Search Name Paramter
@@ -59,13 +61,7 @@ function allActions(){
   let elem = document.querySelector('#dynamic-content');
 
   if (dC_h.length > 0) {
-    if(String(dC_h) == 'icon'){    
-      const img = document.createElement("img")
-      img.src = "img/bottle_icon_sm.png"
-      elem.appendChild(img).width = "150"
-    } else {
-      elem.innerHTML = dC_h
-    }
+  	elem.innerHTML = dC_h
   }
 
   // Get HTML content
@@ -113,7 +109,9 @@ function allActions(){
 
   // Combine data and redirect
   function redirectQualtrics() {
-    const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_ezhI5trahg5tNuB?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
+    // const urlRedirect= `https://google.qualtrics.com/jfe/form/SV_0iXySKlbnGIM3mR?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
+    const urlRedirect= `https://surveyresearch877642313.qualtrics.com/jfe/form/SV_0iXySKlbnGIM3mR?wr='${wid}'&cl='${click_location}'&dC_h='${dC_h_original}'&dispC_h='${dispC_h}'&v=1`
+    
     window.location = urlRedirect
   }
 
