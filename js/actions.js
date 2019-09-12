@@ -104,7 +104,7 @@ function allActions(){
 
 
   // Redirect after 15 seconds, regardless of activity
-  setTimeout(redirectQualtrics, 15000)
+  setTimeout(redirectQualtrics, 20000)
 
 
   // Combine data and redirect
